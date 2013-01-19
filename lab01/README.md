@@ -19,7 +19,7 @@ Write the code for each of these functions just below the class definition.  The
 
 ### Questions the TA/CP will ask you:
 What does the `const` indicate in the prototype: 
-```c
+```
 string getName() const;
 ```
 
@@ -50,7 +50,7 @@ Go on to Part 3 and complete it before demo'ing for your TA/CP.
 
 ## Part 3 (2 point)
 Write a function `printItems` which accepts as input arguments an array of Items (i.e. a pointer to the array) and the length of the array and iterates over each Item printing out its name, quantity, and price in a table format. The table should have a column header (e.g. "Name", "Qty", "Price") with the name field having width 15, quantity field having width 10, and price field having width 10 (see [this page](http://www.cplusplus.com/reference/iomanip/setw/)).
-The price should be printed such that the number is printed with a fixed precision of 2 decimal points (see [this page]http://www.cplusplus.com/reference/iomanip/setprecision/)) for details. You can use the default right justification for your display.
+The price should be printed such that the number is printed with a fixed precision of 2 decimal points (see [this page](http://www.cplusplus.com/reference/iomanip/setprecision/)) for details. You can use the default right justification for your display.
 
 Your output should eventually look like this:
 ```
@@ -92,7 +92,7 @@ Demonstrate your program to the TA/CP using both `lab1data.txt` and `lab1data2.t
 Use a debugger like `ddd` or `kdbg` to step through the execution of your program.
 
 A debugger can be run by invoking it with the executable filename:
-```c
+```shell
 ddd lab1
 ```
 
