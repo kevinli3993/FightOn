@@ -84,7 +84,7 @@ Demonstrate your program to the TA/CP using both `lab1data.txt` and `lab1data2.t
   - How do you check whether the file opened successfully?
   - Did you construct a temporary Item object and copy it into the array slot or just set the fields of the Items in the array?  Which option is more effecient?
   - Explain what would happen if the `len` parameter to `readData()` was not passed by reference, as in:
-  ```c
+  ```
   Item* readData(const char *filename, int len);
   ```
 
