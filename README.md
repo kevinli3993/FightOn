@@ -1,13 +1,5 @@
-Lab 2: Pointers and Streams
-===========================
-
-### Design Document
-There is no design writeup due with this lab.
-
-### Grading
-The lab exercise is worth 10 points. No design writeup is required for this lab.
-
-This lab assignment *must be demonstrated to a TA or Course Producer (CP)*.
+CSCI 102 Labs
+=============
 
 ## General Information
 ### Compiling C++ Programs
@@ -49,3 +41,4 @@ You are expected to have all your lab work done using this repository. Access to
   - Each lab should have its own directory named `labXX` in _lower-case letters_ where `XX` is the two digit lab number, e.g. `03`, `09` and `11`. 
   - When sample code is provided as part of the lab write-up, you should copy those files into the appropriate directory in your private lab repository. Remember, the [course labs repository](https://github.com/usc-csci102-spring2013/labs) is separate from your own private repository. 
   - Each lab submission should have at least `N+1` commits where `N` is the number of parts in the lab write-up. Any code provided in the lab write-up must be committed to your private lab repository *as is* before you start editing it.
+
