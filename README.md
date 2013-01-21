@@ -38,6 +38,7 @@ Every student who [registered](https://docs.google.com/spreadsheet/viewform?form
 
 You are expected to have all your lab work done using this repository. Access to this repository is restricted to yourself and the course teaching staff. This is your repository and it represents your lab work in the course, therefore, you should tend to it properly. Here are some general issues to consider:
   - Update the `README.md` file to include you name, USC email, lecture and lab sections.
+  - Update the `.gitignore` file to include any unneeded files.
   - Each lab should have its own directory named `labXX` in _lower-case letters_ where `XX` is the two digit lab number, e.g. `03`, `09` and `11`. 
   - When sample code is provided as part of the lab write-up, you should copy those files into the appropriate directory in your private lab repository. Remember, the [course labs repository](https://github.com/usc-csci102-spring2013/labs) is separate from your own private repository. 
   - Each lab submission should have at least `N+1` commits where `N` is the number of parts in the lab write-up. Any code provided in the lab write-up must be committed to your private lab repository *as is* before you start editing it.
