@@ -1,4 +1,4 @@
-Lab 01: Pointers and Streams
+Lab 02: Pointers and Streams
 ===========================
 
 ### Design Document
@@ -13,7 +13,7 @@ This lab assignment *must be demonstrated to a TA or Course Producer (CP)*.
 Follow the instructions listed in the [lab repository](https://github.com/usc-csci102-spring2013/labs) [README](https://github.com/usc-csci102-spring2013/labs/blob/master/README.md) file to clone the contents locally on your machine.
 
 ## Part 1 (2 point)
-Copy [`lab1.cpp`](https://github.com/usc-csci102-spring2013/labs/blob/master/lab01/lab1.cpp) file to your local repository and open it in an editor (`emacs` or `gedit`).  You will find a class definition at the top for an Item. An Item has a `name` (`string`), a `quantity` (`int`), and a `price` (`double`).  These three data items are declared as private data members. We have provided declarations (prototypes) for a default constructor and a constructor that accepts initial values for each of the data members. We have also provided accessor (get) functions and mutator (set) functions.
+Copy [`lab2.cpp`](https://github.com/usc-csci102-spring2013/labs/blob/master/lab02/lab2.cpp) file to your local repository and open it in an editor (`emacs` or `gedit`).  You will find a class definition at the top for an Item. An Item has a `name` (`string`), a `quantity` (`int`), and a `price` (`double`).  These three data items are declared as private data members. We have provided declarations (prototypes) for a default constructor and a constructor that accepts initial values for each of the data members. We have also provided accessor (get) functions and mutator (set) functions.
 
 Write the code for each of these functions just below the class definition.  The default constructor is complete and you need not modify it.
 
@@ -24,7 +24,7 @@ string getName() const;
 ```
 
 ## Part 2 (6 points)
-Copy the [`lab1data.txt`](https://github.com/usc-csci102-spring2013/labs/blob/master/lab01/lab1data.txt) file to your local repository and open it in an editor and view its contents. It contains text data for 5 Items. The first line contains the number of items that follow.  Next the data for each item appears on one line with the name first followed by the quantity and then the price. A copy of the file is shown below:
+Copy the [`lab2data.txt`](https://github.com/usc-csci102-spring2013/labs/blob/master/lab02/lab2data.txt) file to your local repository and open it in an editor and view its contents. It contains text data for 5 Items. The first line contains the number of items that follow.  Next the data for each item appears on one line with the name first followed by the quantity and then the price. A copy of the file is shown below:
 ```
 5
 chair 1 1.25
@@ -54,7 +54,7 @@ The price should be printed such that the number is printed with a fixed precisi
 
 Your output should eventually look like this:
 ```
-Read 5 Items from the file: lab1data.txt
+Read 5 Items from the file: lab2data.txt
            Name       Qty     Price
           chair         1      1.25
           table         2      4.30
@@ -65,20 +65,20 @@ Read 5 Items from the file: lab1data.txt
 
 Compile your program:
 ```shell
-g++ -g -Wall -o lab1 lab1.cpp
+g++ -g -Wall -o lab2 lab2.cpp
 ```
 
 Then run your program:
 ```shell
-./lab1 lab1data.txt
+./lab2 lab2data.txt
 ```
 
 Fix any errors that occur by using a debugger like ddd or kdbg or inserting print statements at helpful locations.
 
 Before you demonstrate your code to the TA be sure it correctly handles the case where the data file
-does not exist (i.e. run your program again but with a filename that does not exist such as `lab2data.txt`)
+does not exist (i.e. run your program again but with a filename that does not exist such as `lab3data.txt`)
 
-Demonstrate your program to the TA/CP using both `lab1data.txt` and `lab1data2.txt`
+Demonstrate your program to the TA/CP using both `lab2data.txt` and `lab2data2.txt`
 
 ### Questions the TA/CP will ask you
   - How do you check whether the file opened successfully?
@@ -93,10 +93,10 @@ Use a debugger like `ddd` or `kdbg` to step through the execution of your progra
 
 A debugger can be run by invoking it with the executable filename:
 ```shell
-ddd lab1
+ddd lab2
 ```
 
-Set a breakpoint at the line of code in main that calls `readData()` by right clicking on that line and choosing 'Set Breakpoint'. Then run the program by choosing Program..Run...  Enter `lab1data.txt` as the command line argument and run the program.  Then when the program breaks use Step to step into the function and execute it line by line.  Use print or watch to see the value of your temp variables at various points in time.
+Set a breakpoint at the line of code in main that calls `readData()` by right clicking on that line and choosing 'Set Breakpoint'. Then run the program by choosing Program..Run...  Enter `lab2data.txt` as the command line argument and run the program.  Then when the program breaks use Step to step into the function and execute it line by line.  Use print or watch to see the value of your temp variables at various points in time.
 
 Show your TA/CP you know how to use a debugger like `ddd` or `kdbg` by perform the above tasks.
 
