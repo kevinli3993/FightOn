@@ -12,7 +12,7 @@ This lab assignment *must be demonstrated to a TA or Course Producer (CP)*.
 ### Downloading The Lab
 Follow the instructions listed in the [lab repository](https://github.com/usc-csci102-spring2013/labs) [README](https://github.com/usc-csci102-spring2013/labs/blob/master/README.md) file to clone the contents locally on your machine.
 
-## Part 1 (2 point)
+## Part 1 (2 points)
 Copy [`lab2.cpp`](https://github.com/usc-csci102-spring2013/labs/blob/master/lab02/lab2.cpp) file to your local repository and open it in an editor (`emacs` or `gedit`).  You will find a class definition at the top for an Item. An Item has a `name` (`string`), a `quantity` (`int`), and a `price` (`double`).  These three data items are declared as private data members. We have provided declarations (prototypes) for a default constructor and a constructor that accepts initial values for each of the data members. We have also provided accessor (get) functions and mutator (set) functions.
 
 Write the code for each of these functions just below the class definition.  The default constructor is complete and you need not modify it.
@@ -48,9 +48,9 @@ by `readData()`.  Thus you need to:
 Go on to Part 3 and complete it before demo'ing for your TA/CP.
 
 
-## Part 3 (2 point)
+## Part 3 (2 points)
 Write a function `printItems` which accepts as input arguments an array of Items (i.e. a pointer to the array) and the length of the array and iterates over each Item printing out its name, quantity, and price in a table format. The table should have a column header (e.g. "Name", "Qty", "Price") with the name field having width 15, quantity field having width 10, and price field having width 10 (see [this page](http://www.cplusplus.com/reference/iomanip/setw/)).
-The price should be printed such that the number is printed with a fixed precision of 2 decimal points (see [this page](http://www.cplusplus.com/reference/iomanip/setprecision/)) for details. You can use the default right justification for your display.
+The price should be printed such that the number is printed with a fixed precision of 2 decimal points (see [this page](http://www.cplusplus.com/reference/iomanip/setprecision/) for details). You can use the default right justification for your display.
 
 Your output should eventually look like this:
 ```
@@ -75,7 +75,7 @@ Then run your program:
 
 Fix any errors that occur by using a debugger like ddd or kdbg or inserting print statements at helpful locations.
 
-Before you demonstrate your code to the TA be sure it correctly handles the case where the data file
+Before you demonstrate your code to the TA/CP be sure it correctly handles the case where the data file
 does not exist (i.e. run your program again but with a filename that does not exist such as `lab3data.txt`)
 
 Demonstrate your program to the TA/CP using both `lab2data.txt` and `lab2data2.txt`
