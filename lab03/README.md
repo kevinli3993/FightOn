@@ -14,7 +14,7 @@ To create a dynamic array-based list and use it to store all your friends in a c
 ## Part 1 (3 points)
 Create a dynamic array-based list class for storing integers. It is to have at least a constructor, a destructor, `push_back`, `printUser`, and `at` methods.
 
-## Part 2 (3 points)
+## Part 2 (2 points)
 Create a `User` class. The `User` class is for storing information about someone and their friends (the beginnings of a social network data structure). This class is to have the following data members:
   + Name (a `string`)
   + Age (an `int` that cannot be less than 0)
@@ -31,4 +31,4 @@ User age: <output age here>
 User friends: <output all the friend names here with a space between them>
 ```
 
-NOTE: If you want, you can put all this code into a single .cpp file. It makes compiling it easier.
+*_NOTE_*: If you want, you can put all this code into a single `.cpp` file. It makes compiling it easier.
