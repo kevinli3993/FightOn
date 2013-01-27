@@ -31,5 +31,6 @@ Add a `printUser` method to your `User` class.  Then in `main()`, call that meth
 	User name: <output name here>
 	User age: <output age here>
 	User friends: <output all the friends' names here with a space between them>
+```
 
 NOTE: If you want, you can put all this code into a single `.cpp` file. It makes compiling it easier.
