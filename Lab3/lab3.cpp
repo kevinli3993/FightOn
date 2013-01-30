@@ -55,6 +55,56 @@ string List::at(int loc) const
 	return names_[loc];
 }
 
+class User
+{
+	private:
+		string name_;
+		int age_;
+		List* friends;
+	public:
+		User();
+		~User();
+		void setName(string name);
+		void setAge(int age);
+		string getName() const;
+		int getAge() const;
+		List* getFriends() const;
+};
+
+User::User()
+{
+	friends = new List;
+}
+
+User::~User()
+{
+}
+
+void User::setName(string name)
+{
+	name_ = name;
+}
+
+void User::setAge(int age)
+{
+	age_ = age;
+}
+
+string User::getName() const
+{
+	return name_;
+}
+
+int User::getAge() const
+{
+	return age_;
+}
+
+List* User::getFriends() const
+{
+	return friends;
+}
+
 
 		
 		
