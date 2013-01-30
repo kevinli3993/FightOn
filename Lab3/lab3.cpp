@@ -69,6 +69,7 @@ class User
 		string getName() const;
 		int getAge() const;
 		List* getFriends() const;
+		void printUser();
 };
 
 User::User()
@@ -105,6 +106,25 @@ List* User::getFriends() const
 	return friends;
 }
 
+void User::printUser()
+{
+	cout << "User name: " << name_ << endl;
+	cout << "User age: " << age_ << endl;
+	cout << "User friends: " ;
+	for (int i = 0; i < friends->size(); i++)
+	{
+		cout << friends->at(i);
+		if (i != (friends->size()-1))
+		{
+			cout << " ";
+		}
+		else
+		{
+			cout << "." << endl << endl;
+		}
+	} 
+}
+
 
 int main()
 {
@@ -112,30 +132,40 @@ int main()
 	string input_name;
 	string friend_name;
 	int input_age;
-	User* new_user;
 	
 	while(true) //creates list of users
 	{
-		new_user = new User();
+		User* new_user = new User();
 		cout << "Input Name and Age of User" << endl;
 		cin >> input_name;
 		if (input_name == "done")
 			break;
 		cin >> input_age;
+		do
+		{
+			if (cin.fail())
+			{
+				cout << "Not a number, please enter a number:" << endl;
+				cin.clear();
+				cin.ignore(10000,'\n');
+				cin >> input_age;
+			}
+		}while(cin.fail());
 		new_user->setName(input_name);
 		new_user->setAge(input_age);
 		userList.push_back(new_user);
-		delete new_user;
 	}
 	cout << "done!" << endl;
 	
 	input_name = ""; //reset input_name
 	
 	cin.ignore();
-	while(input_name != "done") //find user and input friends
+	while(true) //find user and input friends
 	{
 		cout << "Input User's Name and User's Friend" << endl;
 		cin >> input_name;
+		if(input_name == "done")
+			break;
 		cin >> friend_name;
 		bool found = false;
 		for (unsigned int i = 0; i < userList.size(); i++)
@@ -152,6 +182,12 @@ int main()
 		}
 		cin.ignore();
 	}
+	
+	for(unsigned int i = 0; i < userList.size(); i++)
+	{
+		userList[i]->printUser();
+	}
+	return 0;
 }	
 		
 		
