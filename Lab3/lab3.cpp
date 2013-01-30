@@ -106,6 +106,52 @@ List* User::getFriends() const
 }
 
 
-		
+int main()
+{
+	vector<User*> userList;
+	string input_name;
+	string friend_name;
+	int input_age;
+	User* new_user;
+	
+	while(true) //creates list of users
+	{
+		new_user = new User();
+		cout << "Input Name and Age of User" << endl;
+		cin >> input_name;
+		if (input_name == "done")
+			break;
+		cin >> input_age;
+		new_user->setName(input_name);
+		new_user->setAge(input_age);
+		userList.push_back(new_user);
+		delete new_user;
+	}
+	cout << "done!" << endl;
+	
+	input_name = ""; //reset input_name
+	
+	cin.ignore();
+	while(input_name != "done") //find user and input friends
+	{
+		cout << "Input User's Name and User's Friend" << endl;
+		cin >> input_name;
+		cin >> friend_name;
+		bool found = false;
+		for (unsigned int i = 0; i < userList.size(); i++)
+		{
+			if (userList[i]->getName() == input_name)
+			{
+				found = true;
+				userList[i]->getFriends()->push_back(friend_name);
+			}
+		}
+		if (found == false)
+		{
+			cout << "User Not Found" << endl;
+		}
+		cin.ignore();
+	}
+}	
 		
 		
