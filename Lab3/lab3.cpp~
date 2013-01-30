@@ -1,0 +1,183 @@
+#include <vector>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class List
+{
+	private:
+		int size_;
+		int max_size_;
+		string* names_;
+	public:
+		List();
+		~List();
+		void push_back(string name);
+		int size() const;
+		string at(int loc) const;		
+};
+
+List::List()
+{
+	max_size_ = 5;
+	size_ = 0;
+	names_ = new string[max_size_];
+}
+
+void List::push_back(string name)
+{
+	if (size_ == max_size_)
+	{
+		string* new_name_array = new string[max_size_*=2];
+		for (int i = 0; i < size_; i++)
+		{
+			new_name_array[i] = names_[i];
+		}
+		delete [] names_;
+		names_ = new_name_array;
+	}
+	names_[size_] = name;
+	size_++;
+}
+
+int List::size() const
+{
+	return size_;
+}
+
+string List::at(int loc) const
+{
+	if(loc >= size_ || loc<0 )
+	{
+		return "failed";
+	}
+	return names_[loc];
+}
+
+class User
+{
+	private:
+		string name_;
+		int age_;
+		List* friends;
+	public:
+		User();
+		~User();
+		void setName(string name);
+		void setAge(int age);
+		string getName() const;
+		int getAge() const;
+		List* getFriends() const;
+		void printUser();
+};
+
+User::User()
+{
+	friends = new List;
+}
+
+User::~User()
+{
+}
+
+void User::setName(string name)
+{
+	name_ = name;
+}
+
+void User::setAge(int age)
+{
+	age_ = age;
+}
+
+string User::getName() const
+{
+	return name_;
+}
+
+int User::getAge() const
+{
+	return age_;
+}
+
+List* User::getFriends() const
+{
+	return friends;
+}
+
+void User::printUser()
+{
+	cout << "User name: " << name_ << endl;
+	cout << "User age: " << age_ << endl;
+	cout << "User friends: " ;
+	for (int i = 0; i < friends->size(); i++)
+	{
+		cout << friends->at(i);
+		if (i != (friends->size()-1))
+		{
+			cout << " ";
+		}
+		else
+		{
+			cout << "." << endl << endl;
+		}
+	}
+}
+		
+int main()
+{
+	vector<User*> userList;
+	string input_name;
+	string friend_name;
+	int input_age;
+	User* new_user;
+	
+	while(true) //creates list of users
+	{
+		new_user = new User();
+		cout << "Input Name and Age of User" << endl;
+		cin >> input_name;
+		cin >> input_age;
+		new_user->setName(input_name);
+		new_user->setAge(input_age);
+		userList.push_back(new_user);
+		if (input_name == "done")
+			break;
+		delete new_user;
+	}
+	cout << "done!" << endl;
+	
+	input_name = ""; //reset input_name
+	
+	cin.ignore();
+	while(input_name != "done") //find user and input friends
+	{
+		cout << "Input User's Name and User's Friend" << endl;
+		cin >> input_name;
+		cin >> friend_name;
+		bool found = false;
+		for (unsigned int i = 0; i < userList.size(); i++)
+		{
+			if (userList[i]->getName() == input_name)
+			{
+				found = true;
+				userList[i]->getFriends()->push_back(friend_name);
+			}
+		}
+		if (found == false)
+		{
+			cout << "User Not Found" << endl;
+		}
+		cin.ignore();
+	}
+	
+	for(unsigned int i = 0; i < userList.size(); i++)
+	{
+		userList[i]->printUser();
+	}
+	return 0;
+}
+		
+		
+		
