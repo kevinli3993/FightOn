@@ -88,9 +88,10 @@ git status
 ## Part 2 (4 points)
 Add the following member functions to your `MyList<T>` class:
 ```C++
-bool remove(int val);  // If "val" occurs in the list, remove the first 
-                       // occurrence of "val" and return val.  Return false 
+bool remove(T val);    // If "val" occurs in the list, remove the first
+                       // occurrence of "val" and return true. Return false
                        // otherwise
+
 int pop(int loc);      // return the value at index "loc"
 ```
 
