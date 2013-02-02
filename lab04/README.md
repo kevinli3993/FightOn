@@ -49,27 +49,23 @@ Write a simple program in a separate file (`part1.cpp`) that has a `main()` func
 Demonstrate to your TA/CP that your templated class is working.
 
 ### Commandline Hints
-  + To create an empty file from the commandline:
+
++ To create an empty file from the commandline:
+
 ```shell
-# Create an empty file called part1.cpp
+#Create an empty file called part1.cpp
 touch part1.cpp
 ```
-  + To edit a file from the commandline:
-    - Emacs ([cheat](http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf) [sheet](https://ccrma.stanford.edu/guides/package/emacs/emacs.html))
++ To edit a file from the commandline using emacs ([cheat](http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf) [sheet](https://ccrma.stanford.edu/guides/package/emacs/emacs.html)) or gedit:
 
 ```shell
-# The '&' at the end sends the process in the background so you have your commandline back
+#The '&' at the end sends the process in the background so you have your commandline back
 emacs part1.cpp &
-```
-
-    - Gedit
-
-```shell
-# The '&' at the end sends the process in the background so you have your commandline back
+#or
 gedit part1.cpp &
 ```
 
-  + To commit changes you made to both `part1.cpp` and `mylist.h`
++ To commit changes you made to both `part1.cpp` and `mylist.h`
 
 ```shell
 #Check the status of the repository
