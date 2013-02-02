@@ -56,17 +56,21 @@ touch part1.cpp
 ```
   + To edit a file from the commandline:
     - Emacs ([cheat](http://refcards.com/docs/gildeas/gnu-emacs/emacs-refcard-a4.pdf) [sheet](https://ccrma.stanford.edu/guides/package/emacs/emacs.html))
+
 ```shell
 # The '&' at the end sends the process in the background so you have your commandline back
 emacs part1.cpp &
 ```
+
     - Gedit
+
 ```shell
 # The '&' at the end sends the process in the background so you have your commandline back
 gedit part1.cpp &
 ```
 
   + To commit changes you made to both `part1.cpp` and `mylist.h`
+
 ```shell
 #Check the status of the repository
 git status
@@ -104,6 +108,7 @@ Demonstrate your part2 program to your TA/CP.
 
 ### Commandline Hints
   + To copy `part1.cpp` to a new file named `part2.cpp` in the same directory:
+
 ```shell
 #Copy syntax is: cp SRC_FILE DEST_FILE
 cp part1.cpp part2.cpp
