@@ -1,4 +1,4 @@
-# Lab 03: Templates, Exceptions, and Operators
+# Lab 04: Templates, Exceptions, and Operators
 
 ### Design Document
 There is no design writeup due with this lab.
