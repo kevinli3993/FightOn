@@ -92,7 +92,7 @@ bool remove(T val);    // If "val" occurs in the list, remove the first
                        // occurrence of "val" and return true. Return false
                        // otherwise
 
-int pop(int loc);      // return the value at index "loc"
+T pop(int loc);        // remove and return the value at location "loc"
 ```
 
 Add code to your `MyList<T>` class such that it will throw appropriate `invalid_argument` exceptions for any function that might have an invalid argument. Tell your TA/CP which functions those are and add the appropriate code to throw an `invalid_argument` exception.
