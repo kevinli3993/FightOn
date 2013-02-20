@@ -6,6 +6,7 @@ using namespace std;
 int main()
 {
   LList<int> mylist;
+  cout << "Size: " << mylist.size() << endl;
   mylist.push_back(5);
   mylist.push_back(6);
   mylist.push_back(7);
@@ -19,6 +20,8 @@ int main()
   while(!mylist.empty()){
     cout << mylist.peek_front() << endl;
     mylist.pop_front();
+    cout << "Size: " << mylist.size() << endl;
   }
+mylist.pop_front();
   return 0;
 }

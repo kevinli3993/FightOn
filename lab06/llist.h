@@ -1,5 +1,6 @@
 #ifndef LLIST_H
 #define LLIST_H
+#include <cstddef>
 
 template <typename T>
 struct Item {
@@ -24,7 +25,7 @@ class LList {
  private:
   Item<T> *getNodeAt(int loc) const;
 
- private:
+ protected:
   Item<T> *head_;
 };
 
@@ -128,6 +129,8 @@ void LList<T>::push_back(const T& new_val)
 template <typename T>
 void LList<T>::pop_front()
 {
+	if (empty())
+		return;
 	Item<T>* temp = head_->next;
 	delete head_;
 	head_ = temp;
