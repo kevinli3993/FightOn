@@ -14,6 +14,7 @@ class LList {
   ~LList();
   bool empty() const;
   int size() const;
+  T& operator[](int loc);
   void push_back(const T& new_val);
   void pop_front();
   T& peek_front() const;
@@ -31,7 +32,7 @@ class LList {
 template <typename T>
 LList<T>::LList()
 {
-
+	head_ = NULL;
 }
 
 
@@ -44,53 +45,98 @@ LList<T>::~LList()
   clear();
 }
 
-
+template <typename T>
+T& LList<T>::operator[](int loc)
+{
+	Item<T>* temp = head_;
+	if(head_->next == NULL)
+		return head_->val;
+	for (int i = 0; i < loc; i++)
+	{	
+		temp = temp->next;
+	}
+	return temp->val;
+}
 
 
 
 template <typename T>
 bool LList<T>::empty() const
 {
-
-
+	return (head_ == NULL);
 }
 
 template <typename T>
 int LList<T>::size() const
 {
-
-
-
+	int sizecount = 0;
+	Item<T>* temp;
+	if(empty())
+		return sizecount;
+	else
+	{
+		temp = head_;
+		sizecount++;
+	}
+	
+	
+	while(temp->next != NULL)
+	{
+		temp = temp->next;
+		sizecount++;
+	}
+	
+	return sizecount;
 }
 
 template <typename T>
 Item<T>* LList<T>::getNodeAt(int loc) const
 {
-
-
+	Item<T> temp = head_;
+	for (int i = 0; i < loc; i++)
+	{
+		if(head_->next == NULL)
+			return NULL;
+			
+		temp = temp->next;
+	}
+	return temp;
 }
 
 template <typename T>
-void LList<T>::push_back(T new_val)
+void LList<T>::push_back(const T& new_val)
 {
-
-
-
-
+	Item<T>* newItem = new Item<T>;
+	newItem->val = new_val;
+	newItem->next = NULL;
+	
+	if (empty())
+		head_ = newItem;
+	else
+	{
+		Item<T>* temp = head_;
+	
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+	
+		temp->next = newItem;
+	}
 } 
 
 template <typename T>
-T LList<T>::pop_front()
+void LList<T>::pop_front()
 {
-
-
+	Item<T>* temp = head_->next;
+	delete head_;
+	head_ = temp;
 }
 
 template <typename T>
 T& LList<T>::peek_front() const
 {
-
-
+	return head_->val;
 }
 
 //template <typename T>
