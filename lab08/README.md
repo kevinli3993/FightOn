@@ -34,6 +34,18 @@ cd lab_ttrojan
 git pull
 ```
 
+## Part 0 &ndash; Open Issues in Private Lab & PA Trackers (0 points)
+Your private lab and programming assignments repositories host their own private issue trackers. All resolved, invalid or inactive issues **must** be closed as soon as they become so. Before grading this lab, show your TA/CP both private issue trackers and the number of open issues there.
+
+**Open Issues**: an open issue should be left open as long as the issue is:
+  + Expecting a response from **@TeachingStaff** or one of its members.
+  + Represents a bug or feature you have yet to implement.
+  + An open discussion that has not concluded
+
+**Closed Issues**: a closed issue - as the name entails - is completed or no longer an issue. When a **@TeachingStaff** member visit an issue and finds it to be closed, this is a hint that their assistance is no longer needed. A closed issue should be _re-opened_ if:
+  + You find the issue was closed prematurely.
+  + You want open a dialog about this issue with a **@TeachingStaff** member.
+
 ## Part 1 &ndash; Insertion Sort (3 points)
 Write the **insertion-sorted** linked-list population function. Recall, as you generate a random number put it in the correct, sorted location based on the data in the list thus far.
 
