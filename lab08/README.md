@@ -34,7 +34,7 @@ cd lab_ttrojan
 git pull
 ```
 
-## Part 0 &ndash; Open Issues in Private Lab & PA Trackers (0 points)
+## Part 0 &ndash; Open Issues in Private Lab & PA Trackers
 Your private lab and programming assignments repositories host their own private issue trackers. All resolved, invalid or inactive issues **must** be closed as soon as they become so. Before grading this lab, show your TA/CP both private issue trackers and the number of open issues there.
 
 **Open Issues**: an open issue should be left open as long as the issue is:
