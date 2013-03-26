@@ -78,7 +78,9 @@ Here is a link to the `QTimer` class reference documentation:
 ## Part 2 &ndash; Create Rectangles at Random Locations, Color, and Speed (6 points)
 The provided code only creates a single rectangle that moves. Change this so that rectangles get created every so often &ndash; say every 50 executions of the `handleTimer()` function. Create a new rectangle at a random location &ndash; not to exceed the 250x250 size of the animation window &ndash; and with a random velocity in the x- and y-directions. Assign a color randomly. You can do this by having a `switch` statement with at least 4 colors of your choice.
 
-You don't have to store the new rectangles in a list, as adding them to the scene will cause the scene to keep track of them. You would only have to store them in a list if you wanted to delete them at some point in the program execution &ndash; like something being killed in a game.
+~~You don't have to store the new rectangles in a list, as adding them to the scene will cause the scene to keep track of them. You would only have to store them in a list if you wanted to delete them at some point in the program execution &ndash; like something being killed in a game.~~
+
+You do need to keep track of all the newly created rectangles as you need to call `move` on each one of them.
 
 ## Extra Credit &ndash; Use an Image Instead of a Rectangle (2 points)
 Change your program so that it displays a small image, instead of a rectangle. Nothing else should change from parts 1, or 2.
