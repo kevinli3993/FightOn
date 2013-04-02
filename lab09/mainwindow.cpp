@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+<<<<<<< HEAD
 #include <cstdlib>
 
 void MainWindow::handleTimer()
@@ -68,6 +69,11 @@ void MainWindow::handleStop()
 	{
 		timer->start();
 	}
+=======
+
+void MainWindow::handleTimer() {
+    item->move( WINDOW_MAX_X, WINDOW_MAX_Y );
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 MainWindow::MainWindow()  {
@@ -81,6 +87,7 @@ MainWindow::MainWindow()  {
     //First 2 arguments are the x, y, of the upper left of the rectangle.
     //The second 2 arguments are the width and height
     //The last 2 arguments are the velocity in the x, and y, directions
+<<<<<<< HEAD
     BouncingRectangle* newItem = new BouncingRectangle( 11.0, 74.0, 20.0, 20.0, 2, 3 );
     newItem->setBrush( redBrush );
     items.push_back(newItem);
@@ -90,6 +97,15 @@ MainWindow::MainWindow()  {
     //This sets the size of the window and gives it a title.
     view->setFixedSize( WINDOW_MAX_X*2, WINDOW_MAX_Y*2 );
     view->setWindowTitle("Bouncing Rectangles");
+=======
+    item = new BouncingRectangle( 11.0, 74.0, 20.0, 20.0, 2, 3 );
+    item->setBrush( redBrush );
+    scene->addItem( item );
+
+    //This sets the size of the window and gives it a title.
+    view->setFixedSize( WINDOW_MAX_X*2, WINDOW_MAX_Y*2 );
+    view->setWindowTitle( "Graphical 8-Tile Puzzle");
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
     //This is how we do animation. We use a timer with an interval of 5 milliseconds
     //We connect the signal from the timer - the timeout() function to a function
@@ -97,11 +113,16 @@ MainWindow::MainWindow()  {
     timer = new QTimer(this);
     timer->setInterval(5);
     connect(timer, SIGNAL(timeout()), this, SLOT(handleTimer()));
+<<<<<<< HEAD
     
     buttonStart = new QPushButton("Start/Stop");
     scene->addWidget(buttonStart);
     connect(buttonStart, SIGNAL(clicked()), this, SLOT(handleStop()));
 	counter = 0;
+=======
+
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 void MainWindow::show() {
@@ -117,8 +138,15 @@ MainWindow::~MainWindow()
 {
     timer->stop();
     delete timer;
+<<<<<<< HEAD
+=======
+    delete item;
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
     delete scene;
     delete view;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1

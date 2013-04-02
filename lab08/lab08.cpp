@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
 
+=======
+#include <iostream>
+#include <ctime>
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 using namespace std;
 
 // Linked list item struct
@@ -11,6 +16,7 @@ struct Item {
   Item *next;
 };
 
+<<<<<<< HEAD
 int arraySequentialSearch( int value );
 Item *linkedSequentialSearch( int value );
 int arrayBinarySearch( int value );
@@ -102,6 +108,13 @@ int main() {
   return 0;
 }
 
+=======
+// Global declarations of an array and linked list head pointer
+const int MAXSIZE = 50000;
+int list[MAXSIZE];
+Item *head;
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 int arraySequentialSearch( int value ) {
   //An array-based sequential search algorithm. Returns the index position
   //of the value being searched for if found and returns -1 otherwise
@@ -162,6 +175,7 @@ int arrayBinarySearch( int value ) {
 // **************** CHANGE ME ************************
 // Change the code to populate data with random numbers
 // between 0 and 1,000,000 and insert them in sorted order
+<<<<<<< HEAD
 
 void populateLinkedList() 
 {
@@ -223,23 +237,51 @@ void populateLinkedList()
     		}
     		
   	}
+=======
+void populateLinkedList() {
+  //Appends MAXSIZE even numbers in the list
+  Item *temp, *last;
+
+  //Create the first item so that in the for loop we don't
+  //have to check for head == NULL
+  head = new Item;
+  head->value = 0;
+  head->next = NULL;
+  last = head;
+
+  for ( int i=1; i<MAXSIZE; i++ ) {
+    temp = new Item;
+    temp->value = 2*MAXSIZE-i*2;
+    temp->next = NULL;
+    last->next = temp; //This is where we actually add the new item on the end of the list
+    last = temp;       //Now move last to point to the new last item in the list
+  }
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 // **************** CHANGE ME ************************
 // Change the code to populate data with random numbers
 // between 0 and 1,000,000
+<<<<<<< HEAD
 
 void populateArrayList() {
   //Puts MAXSIZE even numbers in the list
   for ( int i=0; i<MAXSIZE; i++ ) {
     list[i] = rand()%1000001;
     
+=======
+void populateArrayList() {
+  //Puts MAXSIZE even numbers in the list
+  for ( int i=0; i<MAXSIZE; i++ ) {
+    list[i] = 2*MAXSIZE-i*2;
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
   }
 }
 
 // **************** WRITE ME ************************
 // Add your code (function(s)) to implement Selection Sort
 
+<<<<<<< HEAD
 void selectionSort()
 {
 	int number_swap, tempIndex;
@@ -306,4 +348,77 @@ void mergesort()
 
 // **************** WRITE ME ************************
 // Add your code (function(s)) to implement Merge Sort
+=======
+
+
+
+// **************** WRITE ME ************************
+// Add your code (function(s)) to implement Merge Sort
+int other[MAXSIZE];
+
+
+int main() {
+  clock_t start, finish;
+  double  duration;
+  cout << "List size of " << MAXSIZE << endl;
+
+  //Put data into the two types of lists
+  populateArrayList();
+  populateLinkedList();
+
+  start = clock();
+
+  // Add your call to either selection or merge sort here.
+
+
+
+  finish = clock();
+  duration = (double)(finish - start) / CLOCKS_PER_SEC;
+  cout <<"Total CPU for sort time: "<<duration<<endl;
+
+  // Write a for loop to check that data in your array is 
+  // in sorted order
+
+
+
+
+
+
+
+  //Let's start off with a value not in the list and see how long it takes.
+  int numiters = 100000;
+  // Start the stopwatch
+  start = clock();
+  for ( int i=0; i<numiters; i++ ) {
+    arraySequentialSearch( 2*MAXSIZE );
+  }
+  // Measure the elapsed CPU time, and print.
+  finish = clock();
+  duration = (double)(finish - start) / CLOCKS_PER_SEC;
+  cout <<"Average CPU for array sequential search time: "<<duration/numiters<<endl;
+
+  // Start the stopwatch
+  start = clock();
+  for ( int i=0; i<numiters; i++ ) {
+    linkedSequentialSearch( 2*MAXSIZE );
+  }
+  // Measure the elapsed CPU time, and print.
+  finish = clock();
+  duration = (double)(finish - start) / CLOCKS_PER_SEC;
+  cout <<"Average CPU for linked sequential search time: "<<duration/numiters<<endl;
+
+  // Start the stopwatch
+  start = clock();
+  for ( int i=0; i<numiters; i++ ) {
+    arrayBinarySearch( 2*MAXSIZE );
+  }
+  // Measure the elapsed CPU time, and print.
+  finish = clock();
+  duration = (double)(finish - start) / CLOCKS_PER_SEC;
+  cout <<"Average CPU time for array binary searches time: "<<duration/numiters<<endl;
+
+
+  return 0;
+}
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 

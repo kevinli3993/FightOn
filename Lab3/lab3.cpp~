@@ -122,39 +122,62 @@ void User::printUser()
 		{
 			cout << "." << endl << endl;
 		}
-	}
+	} 
 }
-		
+
+
 int main()
 {
 	vector<User*> userList;
 	string input_name;
 	string friend_name;
 	int input_age;
-	User* new_user;
 	
 	while(true) //creates list of users
 	{
-		new_user = new User();
-		cout << "Input Name and Age of User" << endl;
-		cin >> input_name;
-		cin >> input_age;
+		User* new_user = new User();
+		do
+		{
+			cout << "Input Name and Age of User" << endl;
+			cin >> input_name;
+			if (input_name == "done")
+				break;
+			cin >> input_age;
+			if(cin.fail())
+			{
+				cout << "Not a number" << endl;
+				cin.clear();
+				cin.ignore(1000,'\n');
+				continue;
+			}
+			break;
+		}while(1);
+		if(input_name == "done") break;
+/*		do
+		{
+			if (cin.fail())
+			{
+				cout << "Not a number, please enter a number:" << endl;
+				cin.clear();
+				cin.ignore(10000,'\n');
+				cin >> input_age;
+			}
+		}while(cin.fail());*/
 		new_user->setName(input_name);
 		new_user->setAge(input_age);
 		userList.push_back(new_user);
-		if (input_name == "done")
-			break;
-		delete new_user;
 	}
 	cout << "done!" << endl;
 	
 	input_name = ""; //reset input_name
 	
 	cin.ignore();
-	while(input_name != "done") //find user and input friends
+	while(true) //find user and input friends
 	{
 		cout << "Input User's Name and User's Friend" << endl;
 		cin >> input_name;
+		if(input_name == "done")
+			break;
 		cin >> friend_name;
 		bool found = false;
 		for (unsigned int i = 0; i < userList.size(); i++)
@@ -177,7 +200,6 @@ int main()
 		userList[i]->printUser();
 	}
 	return 0;
-}
-		
+}	
 		
 		

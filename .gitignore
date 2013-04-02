@@ -1,1 +1,35 @@
+<<<<<<< HEAD
 a.out
+=======
+# Editor Temporary Files
+.*.sw[a-z]
+*~
+\#*\#
+*.tmp
+*.bak
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Executables
+*.out
+*.exe
+
+# OS Specific
+Thumbs.db
+Desktop.ini
+.DS_Store
+.Trashes
+.Trash
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1

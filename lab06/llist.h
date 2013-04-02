@@ -1,6 +1,9 @@
 #ifndef LLIST_H
 #define LLIST_H
+<<<<<<< HEAD
 #include <cstddef>
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 template <typename T>
 struct Item {
@@ -15,7 +18,10 @@ class LList {
   ~LList();
   bool empty() const;
   int size() const;
+<<<<<<< HEAD
   T& operator[](int loc);
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
   void push_back(const T& new_val);
   void pop_front();
   T& peek_front() const;
@@ -25,7 +31,11 @@ class LList {
  private:
   Item<T> *getNodeAt(int loc) const;
 
+<<<<<<< HEAD
  protected:
+=======
+ private:
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
   Item<T> *head_;
 };
 
@@ -33,7 +43,11 @@ class LList {
 template <typename T>
 LList<T>::LList()
 {
+<<<<<<< HEAD
 	head_ = NULL;
+=======
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 
@@ -46,6 +60,7 @@ LList<T>::~LList()
   clear();
 }
 
+<<<<<<< HEAD
 template <typename T>
 T& LList<T>::operator[](int loc)
 {
@@ -58,18 +73,27 @@ T& LList<T>::operator[](int loc)
 	}
 	return temp->val;
 }
+=======
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 
 
 template <typename T>
 bool LList<T>::empty() const
 {
+<<<<<<< HEAD
 	return (head_ == NULL);
+=======
+
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 template <typename T>
 int LList<T>::size() const
 {
+<<<<<<< HEAD
 	int sizecount = 0;
 	Item<T>* temp;
 	if(empty())
@@ -88,11 +112,17 @@ int LList<T>::size() const
 	}
 	
 	return sizecount;
+=======
+
+
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 template <typename T>
 Item<T>* LList<T>::getNodeAt(int loc) const
 {
+<<<<<<< HEAD
 	Item<T> temp = head_;
 	for (int i = 0; i < loc; i++)
 	{
@@ -134,12 +164,37 @@ void LList<T>::pop_front()
 	Item<T>* temp = head_->next;
 	delete head_;
 	head_ = temp;
+=======
+
+
+}
+
+template <typename T>
+void LList<T>::push_back(T new_val)
+{
+
+
+
+
+} 
+
+template <typename T>
+T LList<T>::pop_front()
+{
+
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 template <typename T>
 T& LList<T>::peek_front() const
 {
+<<<<<<< HEAD
 	return head_->val;
+=======
+
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 }
 
 //template <typename T>

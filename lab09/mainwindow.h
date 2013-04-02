@@ -9,7 +9,10 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include <QPushButton>
+<<<<<<< HEAD
 #include <vector>
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 #include "bouncingrectangle.h"
 
@@ -22,13 +25,18 @@ class MainWindow : public QWidget {
 public:
     explicit MainWindow();
     ~MainWindow();
+<<<<<<< HEAD
     void createNewRectangle();
+=======
+
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
     void show();
     
 private:
     QGraphicsScene *scene;
     QGraphicsView *view;
     QTimer *timer;
+<<<<<<< HEAD
     QPushButton *buttonStart;
     QPushButton *buttonStop;
     std::vector<BouncingRectangle*> items;
@@ -37,8 +45,17 @@ private:
 public slots:
     void handleTimer();
     void handleStop();
+=======
+    BouncingRectangle *item;
+
+public slots:
+    void handleTimer();
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 };
 
 #endif // MAINWINDOW_H
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1

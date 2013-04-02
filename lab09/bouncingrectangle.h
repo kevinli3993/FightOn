@@ -20,7 +20,10 @@ public:
     int getVelocityX();
     int getVelocityY();
     void move(int windowMaxX, int windowMaxY );
+<<<<<<< HEAD
     void stop();
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 private:
     int x;
@@ -32,4 +35,7 @@ private:
 };
 
 #endif // BOUNCINGRECTANGLE_H
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1

@@ -4,7 +4,11 @@
 #include <vector>
 using namespace std;
 
+<<<<<<< HEAD
 class Shape
+=======
+class Shape 
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 {
  public:
   virtual ~Shape() { }
@@ -13,7 +17,11 @@ class Shape
   virtual string getType() = 0;
 };
 
+<<<<<<< HEAD
 class RightTriangle : public Shape
+=======
+class RightTriangle : public Shape 
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 {
  public:
   RightTriangle(double b, double h) : _b(b), _h(h) { }
@@ -25,6 +33,7 @@ private:
   double _b, _h;
 };
 
+<<<<<<< HEAD
 class Rectangle : public Shape
 {
  public:
@@ -61,13 +70,18 @@ private:
   double _r;
 };
 
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
 int main()
 {
   vector<Shape *> shapeList;
 
+<<<<<<< HEAD
 //  Shape this_wont_work;
   
+=======
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
   int selection = -1;
   while(selection != 0){
     cout << "Choose an option:" << endl;
@@ -89,26 +103,47 @@ int main()
     else if(selection == 2){
       double b, h;
       cin >> b >> h;
+<<<<<<< HEAD
       shapeList.push_back(new Rectangle(b,h));
+=======
+      // Add the rest of the code to allocate a new rectangle
+      //  and add it to the shapeList
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
     }
     // Square case
     else if(selection == 3){
       double s;
       cin >> s;
+<<<<<<< HEAD
       shapeList.push_back(new Square(s));
+=======
+      // Add the rest of the code to allocate a new square
+      //  and add it to the shapeList
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
 
     }
     // Circle case
     else if(selection == 4){
       double r;
       cin >> r;
+<<<<<<< HEAD
       shapeList.push_back(new Circle(r));
     }
   }
 
   for (vector<Shape *>::iterator it = shapeList.begin() ;
        it != shapeList.end();
+=======
+      // Add the rest of the code to allocate a new circle
+      //  and add it to the shapeList
+
+    }
+  }
+
+  for (vector<Shape *>::iterator it = shapeList.begin() ; 
+       it != shapeList.end(); 
+>>>>>>> 3f0cda95c46e3c0380612622bf7e8c9efa63e7f1
        ++it)
     {
       Shape *s = *it;

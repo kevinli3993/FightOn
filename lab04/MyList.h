@@ -8,7 +8,7 @@ class MyList
 	public:
 		MyList();
 		~MyList();
-		T& operator[](int loc);
+		T operator[](int loc);
 		void push_back(T name);
 		int size() const;
 		bool remove (T val);
@@ -103,7 +103,7 @@ T MyList<T>::at(int loc) const
 }
 
 template <class T>
-T& MyList<T>::operator[](int loc)
+T MyList<T>::operator[](int loc)
 {
 	return entity_[loc];
 }
