@@ -35,12 +35,31 @@ int main(int argc, char* argv[])
   printArray(data, size);
 
   MinArrayHeap<int> h(data, size);
-
+  
   // Eventually add some pushes here
+  h.push(1);
+  h.push(MAXVAL/2);
+  h.push(MAXVAL);
+  
+  h.printHeap();
+  
+  cout << endl;
+  int normal, newValue;
+  cout << "Enter the value you want to decrease: ";
+  cin >> normal;
+  cout << "Enter the decrease value: ";
+  cin >> newValue;
+  bool changed = h.decreaseKey(normal,newValue);
 
-
-
-
+  if(changed)
+  {
+  	cout << "The value was changed." << endl;
+  }
+  else
+  {
+  	cout << "The value was not changed." << endl;
+  }
+  
   cout << "Heap contents as they are popped: " << endl;
   while( !h.empty() ){
     cout << h.top() << endl;

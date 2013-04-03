@@ -23,9 +23,11 @@ class MinArrayHeap : public MinHeap<T>
    int size() const;
    bool empty() const;
    void printHeap() const;
+   bool decreaseKey(const T& item, const T& newVal);
  private: // member functions
    /// heapify is called rebuildHeap() in the textbook
    void heapify(int loc);
+   void swap(int loc1, int loc2);
  private: // data members
    std::vector<T> items_;
 };
@@ -41,18 +43,17 @@ MinArrayHeap<T>::MinArrayHeap() : items_(1)
  *             expect that value to be part of the heap
  */
 template <typename T>
-MinArrayHeap<T>::MinArrayHeap(int *data, int size) : 
-       items_(data, data+size)
+MinArrayHeap<T>::MinArrayHeap(int *data, int s) : 
+       items_(data, data+s)
 { 
   //***************** Complete me ***********************
   // Implement code that will convert the values in the items_
   // array/vector to a valid heap using calls to heapify()
   // Take care not to try to heapify the value at location 0
-
-
-
-
-
+	for(int i = size(); i >= 1; i--)
+	{
+		heapify(i);
+	}
 }
 
 template <typename T>
@@ -65,16 +66,28 @@ void MinArrayHeap<T>::push(const T& item)
   
   //***************** Complete me ***********************
   // Now move it into the right location to make a valid heap
+  int i = items_.size()-1;
+  int parent = i/2;
+  while(parent >= 1 && items_[i] < items_[parent])
+  {
+  	swap(i,parent);
+  	i = parent;
+  	parent = i/2;
+  }
+}
 
-
-
-
-
+template <typename T>
+void MinArrayHeap<T>::swap(int loc1, int loc2)
+{
+	T item = items_[loc1];
+	items_[loc1] = items_[loc2];
+	items_[loc2] = item;
 }
 
 template <typename T>
 T& MinArrayHeap<T>::top()
 {
+  //if(empty()) throw(std::out_of_range());
   return items_[1];
 }
 
@@ -108,12 +121,23 @@ void MinArrayHeap<T>::heapify(int loc)
   // loc's children are both valid heaps but the value
   // at loc might be out of place, so make a valid heap
   // out of the item at loc and the subtree below it
-
-
-
-
-
-
+  
+  if (loc*2 > size()) return;	
+  
+  int smaller_child = 2*loc;
+  if(loc*2+1 <= size())
+  {
+  	int right_child = smaller_child+1;
+  	if(items_[right_child] < items_[smaller_child])
+  	{
+  		smaller_child = right_child;
+  	}
+  }
+  if(items_[loc] > items_[smaller_child])
+  {
+  	swap(loc,smaller_child);
+  	heapify(smaller_child);
+  }
 }
 
 template <typename T>
@@ -126,6 +150,29 @@ void MinArrayHeap<T>::printHeap() const
 
 }
 
-
+template <typename T>
+bool MinArrayHeap<T>::decreaseKey(const T& item, const T& newVal)
+{
+	bool changed = false;
+	if(item < newVal) return changed;
+	for(unsigned int i=1; i < items_.size(); i++)
+	{
+		if(items_[i] == item)
+		{
+			items_[i] = newVal;
+			swap(i,1);
+			int parent = i/2;
+			while(parent >= 1&& items_[i] < items_[parent])
+ 			{
+  				heapify(parent);
+  				i = parent;
+  				parent = i/2;
+  			}
+			changed = true;
+			break;
+		}
+	}
+	return changed;
+}
 
 #endif
